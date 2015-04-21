@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>My Neighborhood - Home</title>
+    <meta charset="UTF-8">
+    <link data-require="bootstrap-css@*" data-semver="3.3.1" rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <script src="assets/script.js"></script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-static navbar-inverse">
+      <div class="container">
+        <div class="pull-left">
+          <h2><i class="glyphicon glyphicon-home"></i> My Neighborhood</h2>
+          <h4>Your closest friends</h4>
+        </div>
+        <div class="pull-right">
+          <button id="sign_in" class="btn btn-success btn-lg" onclick="signInModal()">Sign In</button>
+          <button id="sign_out" class="btn btn-warning btn-lg" onclick="signOut()">Sign Out</button>
+          <div id="welcome_msg"></div>
+        </div>
+      </div>
+    </nav>
+    <div class="clearfix"></div>
+
+    <div class="container" id="logged_out">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="alert alert-warning text-center">
+            <h1>Hi there! And welcome to My Neighborhood</h1>
+            <h3>You seem to be logged out right now, so sign in to view your friends and feed!</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" id="logged_in">
+      <section id="friends_feed" class="row">
+        <header class="col-md-12">
+          <h3><i class="glyphicon glyphicon-picture"></i> Latest Pictures by Friends</h3>
+        </header>
+        <div class="col-md-4">
+          <h4>My Friend by Charlie</h4>
+          <img src="http://placehold.it/300x500" alt="placeholder" />
+          <div class="row">
+            <br />
+            <div class="col-md-12 text-center">
+              <button class="btn btn-default btn-block btn-lg" onclick="favorite('My Friend', 'Charlie', 'img1')">
+                 <i class="glyphicon glyphicon-heart bigger red" id="img1"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <h4>Seaside by Smith</h4>
+          <img src="http://placehold.it/300x500" alt="placeholder" />
+          <div class="row">
+            <br />
+            <div class="col-md-12 text-center">
+              <button class="btn btn-default btn-block btn-lg" onclick="favorite('Seaside', 'Smith', 'img2')">
+                 <i class="glyphicon glyphicon-heart bigger red" id="img2"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <h4>Dogs at the park today... by Carly</h4>
+          <img src="http://placehold.it/300x500" alt="placeholder" />
+          <div class="row">
+            <br />
+            <div class="col-md-12 text-center">
+              <button class="btn btn-default btn-block btn-lg" onclick="favorite('Dogs at the park today...', 'Carly', 'img3')">
+                 <i class="glyphicon glyphicon-heart bigger red" id="img3"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <hr>
+
+      <section id="challenges">
+        <header class="row">
+          <h3><i class="glyphicon glyphicon-calendar"></i> Friends' Daily Challenges!</h3>
+        </header>
+        <h4>Smith posted...</h4>
+        <form role="form" class="form form-inline">
+          <label for="challenge1">What is 2 + 2?</label>
+          <input type="text" id="challenge1" class="form-control">
+          <button type="button" class="btn btn-success" onclick="validateAnswer(event)">Check my answer!</button>
+        </form>
+        <span id="correct">Yes!! <i class="glyphicon glyphicon-ok"></i> </span>
+        <span id="incorrect">No, sorry :( <i class="glyphicon glyphicon-remove"></i> </span>
+      </section>
+
+      <hr> 
+
+      <section id="my_favorites">
+        <header class="row">
+          <h3><i class="glyphicon glyphicon-heart"></i> My Favorites</h3>
+        </header>
+        <div id="no_favs"> <!-- No favorites-->
+          <div class="alert alert-warning">
+            <h3>:( You don't have any favorites! Why don't you add some?</h3>
+          </div>
+        </div>
+
+        <div id="yay_favs"> <!-- There are favorites -->
+          <div class="alert alert-info">
+            <h3>Your most recent fav! :)</h3>
+            <span id="recent_fav"></span> <!-- Recent favorite will show up here -->
+          </div>
+        </div>
+      </section>
+    </div><!--container-->
+
+    <hr>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <small>&copy;2015 My Neighborhood</small>
+        </div>
+      </div>
+    </footer>
+  </body>
+
+</html>

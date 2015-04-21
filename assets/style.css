@@ -1,0 +1,29 @@
+/* Styles go here */
+
+.bigger{
+  font-size:2em;
+}
+
+.red {
+  color:rgb(180, 0,80);
+}
+
+.col-md-4 > img {
+	width:90%;
+}
+
+.navbar-inverse {
+	color:#eee;
+}
+
+#logged_in, #sign_out, #yay_favs, #correct, #incorrect {
+	display:none;
+}
+
+#correct{
+	color:green;
+}
+
+#incorrect{
+	color:red;
+}
